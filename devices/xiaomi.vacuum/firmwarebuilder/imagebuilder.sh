@@ -172,6 +172,9 @@ sed -i -e '/    iptables -I INPUT -j DROP -p tcp --dport 22/s/^/#/g' ./opt/rockr
 echo "integrate SSH authorized_keys"
 mkdir ./root/.ssh
 chmod 700 ./root/.ssh
+echo "disable password login"
+sed -i 's|[#]*PasswordAuthentication yes|PasswordAuthentication no|g' ./etc/ssh/sshd_config
+
 
 if [ -f ./root/.ssh/authorized_keys ]; then
 	echo "removing obsolete authorized_keys from Xiaomi image"
