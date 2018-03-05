@@ -8,3 +8,6 @@ mv /var/lib/apt /mnt/data/relocated/var/lib
 ln -s /mnt/data/relocated/var/lib/apt /var/lib/apt
 rm /var/log/*.gz
 rm /var/log/*.1
+#old logs
+find /mnt/data/rockrobo/rrlog/ -name \*.log.gz -type f -delete
+find /mnt/data/rockrobo/rrlog/ -empty -type d -delete
