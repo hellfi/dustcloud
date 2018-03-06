@@ -10,4 +10,7 @@ rm /var/log/*.gz
 rm /var/log/*.1
 #old logs
 find /mnt/data/rockrobo/rrlog/ -name \*.log.gz -type f -delete
+find /mnt/data/rockrobo/rrlog/ -name \*.old.gz -type f -delete
+find /mnt/data/rockrobo/rrlog/ -name \*.gz -type f -mtime +7 -delete
+find /mnt/data/rockrobo/rrlog/ -name \*.stat -type f -mtime +7 -delete
 find /mnt/data/rockrobo/rrlog/ -empty -type d -delete
